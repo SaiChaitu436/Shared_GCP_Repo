@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name : de-coe
+    schema : buybox_dataset
+    tables:
+      - name: BB_Raw_data 
+        identifier: merge_seed_final_table 
