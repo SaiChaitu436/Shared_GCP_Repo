@@ -1,4 +1,8 @@
-WITH ranked_offers AS (
+
+
+  create or replace view `de-coe`.`buybox_dataset`.`fct_ranked`
+  OPTIONS()
+  as WITH ranked_offers AS (
     SELECT 
         EventTime,
         ASIN,
@@ -20,7 +24,7 @@ WITH ranked_offers AS (
                 NotificationId DESC    
         ) AS OfferId
     FROM 
-        {{ ref('src_offers') }}
+        `de-coe`.`buybox_dataset`.`src_offers`
 )
 
 SELECT 
@@ -60,4 +64,5 @@ FROM
     ranked_offers
 ORDER BY 
     ASIN,    
-    OfferId
+    OfferId;
+

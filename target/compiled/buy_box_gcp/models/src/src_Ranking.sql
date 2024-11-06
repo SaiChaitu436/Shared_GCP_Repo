@@ -3,7 +3,7 @@ WITH source_data AS (
         message_id,
         PARSE_JSON(message_body) AS raw_data
     FROM 
-        {{ source("de-coe", "BB_Raw_data") }}
+        `de-coe`.`buybox_dataset`.`merge_seed_final_table`
 ),
 flatten_payload AS (
     SELECT

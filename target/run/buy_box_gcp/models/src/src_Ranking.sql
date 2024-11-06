@@ -1,9 +1,20 @@
-WITH source_data AS (
+
+  
+    
+
+    create or replace table `de-coe`.`buybox_dataset`.`src_Ranking`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      WITH source_data AS (
     SELECT 
         message_id,
         PARSE_JSON(message_body) AS raw_data
     FROM 
-        {{ source("de-coe", "BB_Raw_data") }}
+        `de-coe`.`buybox_dataset`.`merge_seed_final_table`
 ),
 flatten_payload AS (
     SELECT
@@ -105,3 +116,5 @@ ORDER BY
     IsFeaturedMerchant ASC,
     SellerPositiveFeedbackRating DESC,
     ListingPriceAmount ASC
+    );
+  
