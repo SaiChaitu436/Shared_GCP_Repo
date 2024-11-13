@@ -5,4 +5,7 @@ sources:
     schema : buybox_dataset
     tables:
       - name: BB_Raw_data 
-        identifier: merge_seed_final_table 
+        identifier: merge_seed_final_table
+
+      - name: all_columns
+        identifier: dim_all_columns
